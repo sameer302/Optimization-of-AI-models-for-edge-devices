@@ -1,0 +1,6 @@
+[2025-09-08 00:15:12.186] [1895] [HailoRT] [info] [device.cpp:49] [Device] OS Version: Linux 6.12.34+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.34-1+rpt1~bookworm (2025-06-26) aarch64
+[2025-09-08 00:15:12.187] [1895] [HailoRT] [info] [control.cpp:108] [control__parse_identify_results] firmware_version is: 4.20.0
+[2025-09-08 00:15:12.188] [1895] [HailoRT] [info] [control.cpp:108] [control__parse_identify_results] firmware_version is: 4.20.0
+[2025-09-08 00:15:24.320] [2300] [HailoRT] [info] [device.cpp:49] [Device] OS Version: Linux 6.12.34+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.34-1+rpt1~bookworm (2025-06-26) aarch64
+[2025-09-08 00:15:24.322] [2300] [HailoRT] [info] [control.cpp:108] [control__parse_identify_results] firmware_version is: 4.20.0
+[2025-09-08 00:15:24.323] [2300] [HailoRT] [info] [control.cpp:108] [control__parse_identify_results] firmware_version is: 4.20.0
