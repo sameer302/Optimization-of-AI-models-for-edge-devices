@@ -1,0 +1,22 @@
+=== Raspberry Pi Health Snapshot ===
+Timestamp: Thu 11 Sep 01:26:11 IST 2025
+
+1. Core Temperature:
+temp=45.5'C
+
+2. Throttling & Power Status:
+throttled=0x0
+
+3. Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       2.0Gi        13Gi        33Mi       937Mi        13Gi
+Swap:          511Mi          0B       511Mi
+
+4. New Kernel Warnings/Errors since boot:
+[    0.684855] genirq: irq_chip rp1_irq_chip did not update eff. affinity mask of irq 101
+[    2.178694] Failed to write file hailo/hailo8_board_cfg.bin
+[    2.178705] Failed to write file hailo/hailo8_fw_cfg.bin
+[    2.312056] hci_uart_bcm serial0-0: supply vbat not found, using dummy regulator
+[    2.312121] hci_uart_bcm serial0-0: supply vddio not found, using dummy regulator
+
+--- Snapshot Complete ---

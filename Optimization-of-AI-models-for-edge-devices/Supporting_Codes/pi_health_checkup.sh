@@ -1,35 +1,22 @@
 #!/bin/bash
 
-echo "=== Raspberry Pi 5 Health Check ==="
+# --- This script is designed to be run before and after a test ---
 
-echo -e "\n1. Temperature:"
+echo "=== Raspberry Pi Health Snapshot ==="
+echo "Timestamp: $(date)"
+
+echo -e "\n1. Core Temperature:"
 vcgencmd measure_temp
 
-echo -e "\n2. Throttling Status:"
+echo -e "\n2. Throttling & Power Status:"
+# This is the most critical check. 0x0 is a perfect score.
 vcgencmd get_throttled
 
-echo -e "\n3. Power Supply Voltage Warnings:"
-dmesg | grep -i "under-voltage"
-
-echo -e "\n4. Storage Usage:"
-df -h
-
-echo -e "\n5. Memory Usage:"
+echo -e "\n3. Memory Usage:"
 free -h
 
-echo -e "\n6. Kernel Messages (dmesg):"
-dmesg -T | tail -n 20
+echo -e "\n4. New Kernel Warnings/Errors since boot:"
+# This will show if any new hardware or driver issues have appeared.
+dmesg -l err,warn
 
-echo -e "\n7. Critical System Service Logs:"
-journalctl -p 3 -xb
-
-echo -e "\n8. Top Processes (htop):"
-echo "Tip: Run 'htop' manually for interactive view."
-
-echo -e "\n9. System Updates Check:"
-sudo apt update && sudo apt full-upgrade -y
-
-echo -e "\n10. RPi-Monitor Installation (optional):"
-echo "Tip: Run 'sudo apt install rpi-monitor' if desired."
-
-echo -e "Give execute permission: chmod +x pi_health_check.sh"
+echo -e "\n--- Snapshot Complete ---"

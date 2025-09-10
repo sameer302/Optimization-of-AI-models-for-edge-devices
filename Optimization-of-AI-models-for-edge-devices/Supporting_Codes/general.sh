@@ -36,4 +36,8 @@ sudo reboot # this will disconnect pi 5 every time so that i will have to reconn
 hailortcli fw-control identify
 dmesg | grep -i hailo
 
+# 9. display the system performance
+
+htop
+
 
