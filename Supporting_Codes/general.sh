@@ -5,7 +5,8 @@ pip list
 # 2. to create a virtual environment, activate it, install any dependency and close the virtual environment
 
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate # for linux
+venv\Scripts\activate # for windows
 pip install numpy # or whatever you need
 deactivate
 
@@ -39,5 +40,9 @@ dmesg | grep -i hailo
 # 9. display the system performance
 
 htop
+
+# 10. To run a jupyter notebook from virtual environment
+
+python -m ipykernel install --user --name=rasp --display-name "Rasp Jupyter environment"
 
 
