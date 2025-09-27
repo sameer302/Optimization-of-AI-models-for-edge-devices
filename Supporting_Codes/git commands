@@ -10,4 +10,6 @@ git branch --set-upstream-to=origin/<branch> main
 
 git reset --hard
 
-4) 
+4) to keep your local commits but also bring in remote changes when there is a conflict
+
+git  pull --rebase
