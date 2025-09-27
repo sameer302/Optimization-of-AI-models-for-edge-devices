@@ -49,14 +49,27 @@ python -m ipykernel install --user --name=rasp --display-name "Rasp Jupyter envi
 
 iwgetid
 
-# to see all the available wifi networks
+# 12. to see all the available wifi networks
 
 nmcli dev wifi list
 
-# to see all the saved network profiles
+# 13. to see all the saved network profiles
 
 nmcli connection show
 
-# to add a new network and immediately connect to it
+# 14. to add a new network and immediately connect to it
 
 nmcli dev wifi connect "NEW_SSID" password "NEW_PASSWORD"
+
+# 15. to start connection with Raspberry Pi Connect service from browser
+
+rpi-connect on
+
+# 16. to close connection with Raspberry Pi Connect service from browser
+
+rpi-connect off
+
+# 17. To open a text file in bash
+
+nano filename
+
