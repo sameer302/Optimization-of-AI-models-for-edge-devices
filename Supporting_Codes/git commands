@@ -1,0 +1,13 @@
+1) to check the remote repo which is linked to our local repo
+
+git remote -v
+
+2) set tracking information for current branch of local repo
+
+git branch --set-upstream-to=origin/<branch> main
+
+3) discard local changes
+
+git reset --hard
+
+4) 
