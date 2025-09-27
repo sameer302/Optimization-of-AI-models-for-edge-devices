@@ -45,4 +45,18 @@ htop
 
 python -m ipykernel install --user --name=rasp --display-name "Rasp Jupyter environment"
 
+# 11. To know the network to which my pi 5 is connected to
 
+iwgetid
+
+# to see all the available wifi networks
+
+nmcli dev wifi list
+
+# to see all the saved network profiles
+
+nmcli connection show
+
+# to add a new network and immediately connect to it
+
+nmcli dev wifi connect "NEW_SSID" password "NEW_PASSWORD"
