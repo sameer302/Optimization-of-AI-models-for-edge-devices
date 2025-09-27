@@ -1,3 +1,5 @@
+# MAKE SURE TO RUN GIT PULL EVERYTIME BEFORE STARTING TO WORK 
+
 1) to check the remote repo which is linked to our local repo
 
 git remote -v
