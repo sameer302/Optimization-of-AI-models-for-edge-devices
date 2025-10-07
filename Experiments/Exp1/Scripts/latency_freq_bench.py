@@ -16,10 +16,20 @@ def get_cpu_freq_mhz():
     freq_hz = int(out.strip().split('=')[1])
     return freq_hz / 1_000_000.0
 
+# ---------------------------------
+# Function to read CPU temperature
+# ---------------------------------
+def get_temp():
+    # Run the vcgencmd command and decode its output
+    output = subprocess.check_output(["vcgencmd", "measure_temp"]).decode()
+    # Extract the numeric value
+    temp = float(output.split('=')[1].split("'")[0])
+    return temp
 
 # ---------------------------------
 # Combined Benchmark
 # ---------------------------------
+
 def run_latency_freq_bench(sizes=None, repeats=3, outfile="../Results/latency_freq_results.csv"):
     """
     Run a combined benchmark that measures both:
@@ -30,6 +40,8 @@ def run_latency_freq_bench(sizes=None, repeats=3, outfile="../Results/latency_fr
     """
 
     os.makedirs(os.path.dirname(outfile), exist_ok=True)
+
+    print(f"Starting CPU Temperature: {get_temp():.2f}°C")
 
     if sizes is None:
         sizes = range(64, 2049, 64)
@@ -42,7 +54,7 @@ def run_latency_freq_bench(sizes=None, repeats=3, outfile="../Results/latency_fr
     )
 
     print(f"Running combined latency + frequency benchmark | BLAS threads: {threads}")
-    print("matrix_n, avg_latency_s, avg_cpu_freq_mhz")
+    # print("matrix_n, avg_latency_s, avg_cpu_freq_mhz")
 
     for n in sizes:
         total_time = 0.0
@@ -67,7 +79,7 @@ def run_latency_freq_bench(sizes=None, repeats=3, outfile="../Results/latency_fr
         avg_time = total_time / repeats
         avg_freq = np.mean(freqs) if freqs else None
 
-        print(f"{n:7d}, {avg_time:.6f}, {avg_freq:.1f} MHz")
+        # print(f"{n:7d}, {avg_time:.6f}, {avg_freq:.1f} MHz")
 
         rows.append([n, avg_time, avg_freq, repeats, threads])
 
