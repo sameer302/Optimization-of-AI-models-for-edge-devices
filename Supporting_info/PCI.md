@@ -1,0 +1,2 @@
+1) PCIe stands for Peripheral Component Interconnect Express.
+2) It is a high speed serial interface standard used by modern computers to connect high-bandwidth peripherals to the CPU like SSD, GPU, NPU, etc.
